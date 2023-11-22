@@ -4,20 +4,23 @@
 
 {% block body %}
 
-<div class="container">
-    <h1>Добро пожаловать!</h1>
-    <p>Здесь вы можете зарегистрироваться или войти в систему.</p>
-    {% if is_authenticated %}
-        <a class="btn btn-primary" href="{{ url_for('logout') }}">Выйти</a>
-    {% else %}
-        <div class="btn-group" role="group">
-            <a class="btn btn-success" href="{{ url_for('register') }}">Зарегистрироваться</a>
-        </div>
-        <div class="btn-group" role="group">
-            <a class="btn btn-primary mx-2" href="{{ url_for('login') }}">Войти</a>
-        </div>
-    {% endif %}
-
+<div class="container mt-5">
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome!</h1>
+        <p class="lead">Here you can enjoy shopping in a convenient online format.</p>
+        <hr class="my-4">
+        <p>Join us to discover the latest trends and find unique fashion items.</p>
+        {% if is_authenticated %}
+            <a class="btn btn-primary btn-lg" href="{{ url_for('logout') }}">Exit</a>
+        {% else %}
+            <div class="btn-group mt-3" role="group">
+                <a class="btn btn-success btn-lg" href="{{ url_for('register') }}">Register</a>
+            </div>
+            <div class="btn-group mt-3" role="group">
+                <a class="btn btn-primary btn-lg mx-2" href="{{ url_for('login') }}">Login</a>
+            </div>
+        {% endif %}
+    </div>
 </div>
 
 {% endblock %}
