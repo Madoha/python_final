@@ -29,17 +29,17 @@
                         </div>
                     </div>
                 {% endfor %}
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary" type="submit">Remove Selected Items</button>
+                </div>
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary" type="submit" onclick="showAlert()">Buy Selected Items</button>
+                </div>
             {% else %}
                 <div class="col-md-12 text-center">
                     <h2>Your cart is empty</h2>
                 </div>
             {% endif %}
-        </div>
-        <div class="text-center mt-4">
-            <button class="btn btn-primary" type="submit">Remove Selected Items</button>
-        </div>
-        <div class="text-center mt-4">
-            <button class="btn btn-primary" type="submit" onclick="showAlert()">Buy Selected Items</button>
         </div>
     </div>
   </form>
