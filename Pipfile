@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pipenv = "*"
+flask = "*"
+fastapi = {extras = ["all"], version = "*"}
+sqlalchemy = "*"
+flask-sqlalchemy = "*"
+requests = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"

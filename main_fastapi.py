@@ -15,7 +15,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:8000"],
+    allow_origins=["http://localhost:5000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -53,19 +53,6 @@ def add_to_cart(request_data: pydantic_validation.CartBase, db: Session = Depend
         traceback_str = traceback.format_exc()
         raise HTTPException(status_code=500, detail=f"Error in crud: {str(e)}\n{traceback_str}")
     
-# @app.post("/cart_confirm")
-# def cart_confirm(selected_items: List[pydantic_validation.CartBase], db: Session = Depends(get_db)):
-#     try:
-#         for item_remove in selected_items:
-#             success = crud.remove_item_from_cart(db, item_remove.user_id, item_remove.item_id)
-#             if not success:
-#                 raise HTTPException(status_code=404, detail=f"Item with ID {item_remove.item_id} not found in the user's cart")
-
-#         return {"detail": "Selected items successfully bought"}
-#     except Exception as e:
-#         traceback_str = traceback.format_exc()
-#         raise HTTPException(status_code=500, detail=f"Something went wrong: {str(e)}\n{traceback_str}")
-
 
 @app.post("/remove-multiple-from-cart")
 def remove_multiple_from_cart(selected_items: List[pydantic_validation.CartBase], db: Session = Depends(get_db)):
