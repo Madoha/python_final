@@ -1,4 +1,4 @@
 ﻿# python_final
-# pip install [
-# flask, fastapi["all"], sqlalchemy, flask_sqlalchemy?, pydantic
-# ]
+# pipenv shell, pipenv install
+# uvicorn main_fastapi:app --reload
+# cd web, python main_flask.py
